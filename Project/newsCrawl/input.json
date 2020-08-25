@@ -1,0 +1,14 @@
+{
+	"Disclaimer": 			"Please enter Space separated keywords to be searched for each website.",
+	"Websites":   			[
+								{"wjs":					"The Wall Street Journal"},
+								{"privateequitywire": 	"Private Equity Wire"},
+								{"finsmes": 			"FINSMES : Real Time VC & Private Equity Deals and News"}
+							],
+							
+	"crawl":				"N",							
+
+	"wjs": 					"this is for wjs" ,
+	"privateequitywire": 	"claims invest capital" ,
+	"finsmes": 				"deal property $ productivity" 
+}
