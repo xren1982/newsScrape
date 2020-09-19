@@ -1,0 +1,25 @@
+{
+	"Disclaimer": 			"Please enter Space separated keywords to be searched for each website.",
+	"Websites":   			[
+								{"wjs":					"The Wall Street Journal"},
+								{"privateequitywire": 	"Private Equity Wire"},
+								{"finsmes": 			"FINSMES : Real Time VC & Private Equity Deals and News"}
+							],
+							
+	"crawl":				"Y",
+
+	"wjs": 							"this,is,for,wjs",
+	"privateequitywire": 			"claims,invest,capital",
+	"finsmes": 						"deal,property,$,productivity",
+	"altassets":     				"is,for,a,the",
+	"privateequityinternational":   "is,for,a,the",
+	"privateequityiwire":     		"is,for,a,the",
+	"vccircle":     				"is,for,a,the",
+	"pehub":     					"is,for,a,the",
+	"cityam":     					"is,for,a,the",
+	"penews":     					"is,for,a,the,close",
+	"venturecapitaljournal":     	"is,for,a,the",
+	"buyoutsinsider":     			"is,for,a,the,close",
+	"secondariesinvestor":    		"is,for,a,the,close",
+	"unquote":     					"is,for,a,the,to close"
+}
