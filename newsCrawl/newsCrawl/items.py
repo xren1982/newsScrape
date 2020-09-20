@@ -11,4 +11,5 @@ class NewscrawlItem(scrapy.Item):
     headlines = scrapy.Field()
     dates = scrapy.Field()
     links = scrapy.Field()
+    content = scrapy.Field()
 

@@ -59,7 +59,7 @@ if __name__ == "__main__":
     f = open('input.json', )
     inpData = json.load(f)
 
-    col = ['site', 'Master Search', 'Number of Matches', 'headlines', 'Dates', 'links', 'len']
+    col = ['site', 'search key', 'no. of matches', 'headlines', 'dates', 'links', 'content', 'len']
     df = pd.DataFrame(columns=col)
 
     if inpData['crawl'] == 'Y':
@@ -75,18 +75,18 @@ if __name__ == "__main__":
 
         try:
             dfx = pd.DataFrame(json.load(open(i)))
-            dfx['Master Search'] = dfx['headlines'].apply(lambda x: SearchList(list(key.split(',')), x))
-            dfx['len'] = dfx['Master Search'].apply(lambda x: len(x))
-            dfx['Number of Matches'] = dfx['Master Search'].apply(lambda x: 0 if len(x) == 0 else len(list(x.split(','))))
+            dfx['search key'] = dfx['headlines'].apply(lambda x: SearchList(list(key.split(',')), x))
+            dfx['len'] = dfx['search key'].apply(lambda x: len(x))
+            dfx['no. of matches'] = dfx['search key'].apply(lambda x: 0 if len(x) == 0 else len(list(x.split(','))))
             #dfx = dfx[dfx['len'] > 0]
-
             print(dfx.shape)
             df = df.append(dfx, ignore_index = True)
-        except:
-            print("Error Opening the file.")
+        except Exception as e:
+            print("Error Opening the file: "+str(e))
 
     df.columns = [c.upper() for c in df]
     df[[c for c in df if c != 'LEN']].to_excel(writer, sheet_name='Master Sheet', index=False)
     print(df.shape)
 
     writer.save()
+    print('Web Crawl Complete!')

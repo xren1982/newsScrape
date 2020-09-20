@@ -6,7 +6,7 @@
 								{"finsmes": 			"FINSMES : Real Time VC & Private Equity Deals and News"}
 							],
 							
-	"crawl":				"Y",
+	"crawl":				"N",
 
 	"wjs": 							"this,is,for,wjs",
 	"privateequitywire": 			"claims,invest,capital",
