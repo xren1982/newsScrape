@@ -6,7 +6,7 @@
 								{"finsmes": 			"FINSMES : Real Time VC & Private Equity Deals and News"}
 							],
 							
-	"crawl":				"N",
+	"crawl":				"Y",
 
 	"wjs": 							"this,is,for,wjs",
 	"privateequitywire": 			"claims,invest,capital",
@@ -21,5 +21,10 @@
 	"venturecapitaljournal":     	"is,for,a,the",
 	"buyoutsinsider":     			"is,for,a,the,close",
 	"secondariesinvestor":    		"is,for,a,the,close",
-	"unquote":     					"is,for,a,the,to close"
+	"unquote":     					"is,for,a,the,to close",
+	"prnewswire":     				"is,for,a,the,to close",
+	"businesswire":     			"is,for,a,the,to close",
+	"globenewswire":     			"is,for,a,the,to close",
+	"prweb":     					"is,for,a,the,to close",
+	"cision":     					"is,for,a,the,to close"
 }

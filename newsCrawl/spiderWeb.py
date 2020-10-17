@@ -4,20 +4,25 @@ import json
 
 def crawl():
     cacheClean()
-    os.system("scrapy crawl finsmes -o finsmes.json")
-    os.system("scrapy crawl privateequitywire -o privateequitywire.json")
-    os.system("scrapy crawl wjs -o wjs.json")
-    os.system("scrapy crawl altassets -o altassets.json")
-    os.system("scrapy crawl privateequityinternational -o privateequityinternational.json")
-    os.system("scrapy crawl privateequityiwire -o privateequityiwire.json")
-    os.system("scrapy crawl vccircle -o vccircle.json")
-    os.system("scrapy crawl pehub -o pehub.json")
-    os.system("scrapy crawl cityam -o cityam.json")
-    os.system("scrapy crawl penews -o penews.json")
-    os.system("scrapy crawl venturecapitaljournal -o venturecapitaljournal.json")
-    os.system("scrapy crawl buyoutsinsider -o buyoutsinsider.json")
-    os.system("scrapy crawl secondariesinvestor -o secondariesinvestor.json")
-    os.system("scrapy crawl unquote -o unquote.json")
+    os.system("scrapy crawl finsmes -o ./bin/finsmes.json")
+    os.system("scrapy crawl privateequitywire -o ./bin/privateequitywire.json")
+    os.system("scrapy crawl wjs -o ./bin/wjs.json")
+    os.system("scrapy crawl altassets -o ./bin/altassets.json")
+    os.system("scrapy crawl privateequityinternational -o ./bin/privateequityinternational.json")
+    os.system("scrapy crawl privateequityiwire -o ./bin/privateequityiwire.json")
+    os.system("scrapy crawl vccircle -o ./bin/vccircle.json")
+    os.system("scrapy crawl pehub -o ./bin/pehub.json")
+    os.system("scrapy crawl cityam -o ./bin/cityam.json")
+    os.system("scrapy crawl penews -o ./bin/penews.json")
+    os.system("scrapy crawl venturecapitaljournal -o ./bin/venturecapitaljournal.json")
+    os.system("scrapy crawl buyoutsinsider -o ./bin/buyoutsinsider.json")
+    os.system("scrapy crawl secondariesinvestor -o ./bin/secondariesinvestor.json")
+    os.system("scrapy crawl unquote -o ./bin/unquote.json")
+    os.system("scrapy crawl prnewswire -o ./bin/prnewswire.json")
+    os.system("scrapy crawl businesswire -o ./bin/businesswire.json")
+    os.system("scrapy crawl globenewswire -o ./bin/globenewswire.json")
+    os.system("scrapy crawl prweb -o ./bin/prweb.json")
+    os.system("scrapy crawl cision -o ./bin/cision.json")
     dataFiles = getJsonFile()
     print('Data Scrapped in below files:')
     for f in dataFiles:
@@ -25,11 +30,12 @@ def crawl():
 
 def getJsonFile():
     dir = os.getcwd()
-    fileList = os.listdir(dir)
+    bin = os.path.join(dir, "bin")
+    fileList = os.listdir(bin)
     dataFiles = [file for file in fileList if file.endswith(".json") and file.__contains__('input') == False]
     dataFileList = []
     for file in dataFiles:
-        dataFileList.append(os.path.join(dir, file))
+        dataFileList.append(os.path.join(bin, file))
     return dataFileList
 
 def cacheClean():
@@ -65,7 +71,6 @@ if __name__ == "__main__":
     if inpData['crawl'] == 'Y':
         crawl()
     dataFiles = getJsonFile()
-
     for i in dataFiles:
         _, spy = os.path.split(i)
         spy = spy[:-5]
