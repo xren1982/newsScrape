@@ -23,6 +23,15 @@ def crawl():
     os.system("scrapy crawl globenewswire -o ./bin/globenewswire.json")
     os.system("scrapy crawl prweb -o ./bin/prweb.json")
     os.system("scrapy crawl cision -o ./bin/cision.json")
+    os.system("scrapy crawl globalsageknowledge -o ./bin/globalsageknowledge.json")
+    os.system("scrapy crawl internationaladviser -o ./bin/internationaladviser.json")
+    os.system("scrapy crawl asianinvestor -o ./bin/asianinvestor.json")
+    os.system("scrapy crawl fundselectorasia -o ./bin/fundselectorasia.json")
+    os.system("scrapy crawl toplegalit -o ./bin/toplegalit.json")
+    os.system("scrapy crawl lawasia -o ./bin/lawasia.json")
+    os.system("scrapy crawl pionline -o ./bin/pionline.json")
+    os.system("scrapy crawl realdeals -o ./bin/realdeals.json")
+
     dataFiles = getJsonFile()
     print('Data Scrapped in below files:')
     for f in dataFiles:
@@ -74,7 +83,7 @@ if __name__ == "__main__":
     for i in dataFiles:
         _, spy = os.path.split(i)
         spy = spy[:-5]
-
+        print(spy)
         key = inpData[spy]
         print(spy)
 
