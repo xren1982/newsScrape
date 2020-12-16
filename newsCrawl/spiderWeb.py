@@ -31,6 +31,7 @@ def crawl():
     os.system("scrapy crawl lawasia -o ./bin/lawasia.json")
     os.system("scrapy crawl pionline -o ./bin/pionline.json")
     os.system("scrapy crawl realdeals -o ./bin/realdeals.json")
+    os.system("scrapy crawl avcj -o ./bin/avcj.json")
 
     dataFiles = getJsonFile()
     print('Data Scrapped in below files:')
