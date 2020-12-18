@@ -55,11 +55,20 @@ class avcjSpider(scrapy.Spider):
         yield scrapy.Request(self.login_url,callback=self.login)
 
     def login(self,response):
+        
+        work_dir = os.path.dirname(os.path.abspath(__file__))
+        filepath = os.path.join(work_dir,'spiders.cfg')
+        print(filepath)
+        config_raw = ConfigParser()
+        config_raw.read(filepath)
+        username  = config_raw.get('avcj', 'username').strip()
+        password  = config_raw.get('avcj', 'password').strip()
+        
         unicornHeader = {
             'X-Requested-With': 'XMLHttpRequest',
             'Referer': 'https://www.avcj.com/userlogin',
         }
-        formdata = {'redirect_url':'https://www.avcj.com/','subscriber_with_institution_loggedin_as_individual':'true','subscriber[email_id]':'prasad.deshmukh@acuris.com','subscriber[password]':'February@1986','myTime':'Yes'}
+        formdata = {'redirect_url':'https://www.avcj.com/','subscriber_with_institution_loggedin_as_individual':'true','subscriber[email_id]':username,'subscriber[password]':password,'myTime':'Yes'}
         yield FormRequest(url = 'https://www.avcj.com/home/verify_subscription_login',headers = unicornHeader,formdata=formdata,callback=self.parse_login)
     
 
